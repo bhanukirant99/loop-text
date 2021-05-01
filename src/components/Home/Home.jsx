@@ -10,6 +10,7 @@ export const Home = () => {
       <RoomTabs />
       <RoomCard />
       <CreateRoom/>
+      <CreateRoomModal/>
       {/*  
       <CreateRoomModal/>
       <Notification roomText="ReactJs" nameText="Maddy"/>
