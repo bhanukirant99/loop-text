@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, SearchFilter, RoomTabs, RoomCard,CreateRoom,CreateRoomModal } from "../";
+import { Navbar, SearchFilter, RoomTabs, RoomCard,CreateRoom,CreateRoomModal,Notification } from "../";
 
 import "./home.css";
 export const Home = () => {
@@ -13,7 +13,12 @@ export const Home = () => {
       <RoomCard />
       <RoomCard />
       <CreateRoom/>  */}
-      <CreateRoomModal/>
+      {/* <CreateRoomModal/> */}
+      <Notification roomText="ReactJs" nameText="Maddy"/>
+      <Notification roomText="Mongoose" nameText="Kushank"/>
+      <Notification roomText="FireBase" nameText="Janki"/>
+      <Notification/>
+      <Notification/>
     </div>
   );
 };

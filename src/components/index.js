@@ -3,6 +3,7 @@ export { Button } from "./Button/Button";
 export { Home } from "./Home/Home";
 export { Navbar } from "./Navbar/Navbar";
 export { NotificationIcon} from "./Notification/NotificationIcon";
+export {Notification} from "./Notification/Notification"
 export { Search } from "./Search/Search";
 export { Filter } from "./Filter/Filter.jsx";
 export { RoomCard } from "./RoomCard/RoomCard";
