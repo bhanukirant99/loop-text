@@ -5,14 +5,12 @@ import "./home.css";
 export const Home = () => {
   return (
     <div>
-      {/* <Navbar />
+      <Navbar />
       <SearchFilter />
       <RoomTabs />
       <RoomCard />
-      <RoomCard />
-      <RoomCard />
-      <RoomCard />
-      <CreateRoom/> 
+      <CreateRoom/>
+      {/*  
       <CreateRoomModal/>
       <Notification roomText="ReactJs" nameText="Maddy"/>
       <Notification roomText="Mongoose" nameText="Kushank"/>
@@ -22,7 +20,7 @@ export const Home = () => {
       <DialogModal msg="Do you really want to close?"/> */}
       {/* <InviteModal headerText="Staged Audience" /> */}
       {/* <ChatRoom/> */}
-      <InviteSearch/>
+      {/* <InviteSearch/> */}
     </div>
   );
 };

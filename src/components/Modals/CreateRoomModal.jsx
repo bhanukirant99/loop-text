@@ -47,7 +47,7 @@ export const CreateRoomModal = () => {
          
           <div className="flex items-center justify-between p-2">
           <Button
-        primary="btn btn-blue w-2/5 h-10 text-1xl rounded-md  w-96 "
+        primary="bg-blue-500 text-white w-2/5 h-10 text-1xl rounded-md  w-96 "
         text="CREATE"
       />
           </div>
