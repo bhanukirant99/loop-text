@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, SearchFilter, RoomTabs, RoomCard,CreateRoom,CreateRoomModal,Notification,DialogModal,InviteModal } from "../";
+import { Navbar, SearchFilter, RoomTabs, RoomCard,CreateRoom,CreateRoomModal,Notification,DialogModal,InviteModal, ChatRoom } from "../";
 
 import "./home.css";
 export const Home = () => {
@@ -20,8 +20,8 @@ export const Home = () => {
       <Notification/>
       <Notification/>
       <DialogModal msg="Do you really want to close?"/> */}
-      <InviteModal headerText="Staged Audience" />
-      
+      {/* <InviteModal headerText="Staged Audience" /> */}
+      <ChatRoom/>
     </div>
   );
 };
