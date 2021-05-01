@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, SearchFilter, RoomTabs, RoomCard,CreateRoom,CreateRoomModal,Notification } from "../";
+import { Navbar, SearchFilter, RoomTabs, RoomCard,CreateRoom,CreateRoomModal,Notification,DialogModal } from "../";
 
 import "./home.css";
 export const Home = () => {
@@ -19,6 +19,7 @@ export const Home = () => {
       <Notification roomText="FireBase" nameText="Janki"/>
       <Notification/>
       <Notification/>
+      <DialogModal msg="Do you really want to close?"/>
     </div>
   );
 };

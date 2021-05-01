@@ -11,3 +11,4 @@ export { RoomTabs } from "./RoomTabs/RoomTabs.jsx";
 export { SearchFilter } from "./SearchFilter/SearchFilter";
 export { CreateRoom } from "./CreateRoom/CreateRoom";
 export { CreateRoomModal } from "./Modals/CreateRoomModal";
+export { DialogModal} from "./Modals/DialogModal"
