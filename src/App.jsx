@@ -1,8 +1,9 @@
 import "./App.css";
-import {Landing} from './components'
+import {Landing,Home} from './components'
 const App = () => {
   return <div className="App">
-    <Landing/>
+    {/* <Landing/> */}
+    <Home/>
   </div>;
 };
 
