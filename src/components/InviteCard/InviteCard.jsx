@@ -5,7 +5,7 @@ export const InviteCard = ({ userName }) => {
        
       
       <div className="invite-card  flex flex-row justify-evenly items-center">
-          <span class="material-icons text-4xl">account_circle</span>
+          <span className="material-icons text-4xl">account_circle</span>
           <p className=" text-1xl text-black">{userName}</p>
           <Button
             primary="bg-blue-500 text-white w-2/5 h-10 text-1xl "
