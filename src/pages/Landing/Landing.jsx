@@ -20,7 +20,7 @@ export const Landing = () => {
     <div className="landing  flex flex-col items-center justify-evenly lg:justify-center">
       <h1 className="text-5xl lg:text-8xl">LoopText</h1>
       <span className="text-4xl mt-12">
-        Never Miss the live conversation again!
+        Never Miss any live conversations again!
       </span>
 
       {isUserLoggedIn ? (
