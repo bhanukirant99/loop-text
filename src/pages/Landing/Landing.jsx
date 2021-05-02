@@ -17,9 +17,10 @@ export const Landing = () => {
   };
 
   return (
-    <div className="landing  flex flex-col items-center justify-evenly lg:justify-center">
-      <h1 className="text-5xl lg:text-8xl">LoopText</h1>
-      <span className="text-4xl mt-12">
+    <div className="landing  flex flex-col items-center justify-evenly lg:justify-center ">
+      {/* <h1 className="text-5xl lg:text-8xl">LoopText</h1> */}
+      <img src='/images/loop-logo.png' alt='logo'/>
+      <span className="text-3xl mt-10">
         Never Miss any live conversations again!
       </span>
 
