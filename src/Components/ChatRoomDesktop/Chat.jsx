@@ -41,8 +41,8 @@ export const Chat = ({ messages, roomId }) => {
         {messages.map((msgItem) => (
           <div key={msgItem.msgId} className="ml-3">
             <ChatBubble
-              userName="Maddy"
-              timeStamp="Today at 07:19"
+              userName={msgItem.displayName}
+              timeStamp="ddsd"
               photoURL={msgItem.photoURL}
             />
             <p className="flex flex-row justify-center items-center w-2/5">

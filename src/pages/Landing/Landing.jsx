@@ -9,8 +9,6 @@ export const Landing = () => {
   const path = location.state?.from;
   const { user, isUserLoggedIn, loading } = useAuth(firebase.auth());
 
-  console.log({ user, isUserLoggedIn, loading });
-
   const signInWithGoogle = () => {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider);
@@ -18,10 +16,8 @@ export const Landing = () => {
 
   return (
     <div className="landing  flex flex-col items-center justify-evenly lg:justify-center ">
-      {/* <h1 className="text-5xl lg:text-8xl">LoopText</h1> */}
       <img src='/images/logo2.png' alt='logo'/>
       <span className="text-3xl mt-10">
-        {/* Never Miss any live conversations again! */}
       </span>
 
       {isUserLoggedIn ? (
@@ -42,15 +38,4 @@ export const Landing = () => {
   );
 };
 
-
-  /* <Navbar /> */
-
-// {path && <span>Login to continue to {path}</span>}
-//       This is the landing page.
-//       {isUserLoggedIn && <span>You are logged in.</span>}
-//       <div>
-//         <button onClick={signInWithGoogle}>Sign in with Google</button>
-//       </div>
-
-  /* <Button primary="bg-blue-500 text-white w-2/5 h-20 text-3xl" text='Login'/> */
 

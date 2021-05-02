@@ -1,5 +1,6 @@
 import { Button } from "..";
 export const Notification = ({ roomText, nameText }) => {
+  
   return (
     <div className="notification flex flex-row justify-center">
       <div className="notification-card border p-3 m-5">
