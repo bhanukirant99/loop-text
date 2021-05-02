@@ -1,5 +1,6 @@
 body {
-  /* background: url('landing_bg.svg') no-repeat center center fixed;  */
+  background: url('https://raw.githubusercontent.com/Urigo/WhatsApp-Clone-Client-Angular/master/src/assets/chat-background.jpg')   ; 
+ 
 }
 .landing {
   height: 100vh;
