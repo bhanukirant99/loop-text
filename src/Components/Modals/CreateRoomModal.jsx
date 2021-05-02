@@ -5,6 +5,7 @@ import firebase from "firebase/app"
 import "firebase/auth";
 import "firebase/firestore";
 import { useAuth } from "../../hooks";
+import {useNavigate} from "react-router-dom";
 
 
 export const CreateRoomModal = () => {
@@ -12,12 +13,13 @@ export const CreateRoomModal = () => {
   const [agenda,setAgenda]=useState("");
   const [privacy,setPrivacy]=useState(Boolean);
   const {user}=useAuth(firebase.auth());
+  const navigate=useNavigate();
 
-  const createRoom=(e)=>{
+  const createRoom=async (e)=>{
     e.preventDefault();
     const documentRef=firebase.firestore().collection("Rooms").doc();
-
-    documentRef.set({
+    // console.log(documentRef.id);
+    await documentRef.set({
         topic:topic,
         agenda:agenda,
         privacy: privacy, // enum: ["PRIVATE", "PUBLIC"]
@@ -29,6 +31,8 @@ export const CreateRoomModal = () => {
         audience:[],
         messages:[],
     })
+  
+    navigate(`/chatroom/${documentRef.id}`);
 }
   return (
     <div id='create-room-modal' className="modal" autoFocus={false}>
