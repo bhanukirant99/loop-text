@@ -1,11 +1,44 @@
 import "./modal.css";
 import { Button } from "..";
+import {useState} from "react";
+import firebase from "firebase/app"
+import "firebase/auth";
+import "firebase/firestore";
+import { useAuth } from "../../hooks";
+import {useNavigate} from "react-router-dom";
+
+
 export const CreateRoomModal = () => {
+  const [topic,setTopic]=useState("");
+  const [agenda,setAgenda]=useState("");
+  const [privacy,setPrivacy]=useState(Boolean);
+  const {user}=useAuth(firebase.auth());
+  const navigate=useNavigate();
+
+  const createRoom=async (e)=>{
+    e.preventDefault();
+    const documentRef=firebase.firestore().collection("Rooms").doc();
+    // console.log(documentRef.id);
+    await documentRef.set({
+        topic:topic,
+        agenda:agenda,
+        privacy: privacy, // enum: ["PRIVATE", "PUBLIC"]
+        status: "ACTIVE", // enum: ["ACTIVE", "CLOSED"]
+        startedAt: firebase.firestore.Timestamp.now(), // timestamp
+        memberList:[{uid:user.uid}],
+        creator:user.uid,
+        stage:[{uid:user.uid}],
+        audience:[],
+        messages:[],
+    })
+  
+    navigate(`/chatroom/${documentRef.id}`);
+}
   return (
     <div id='create-room-modal' className="modal" autoFocus={false}>
       <div className="modal-content flex flex-col items-center w-full relative   ">
        
-        <form action="" className="lg:w-2/5 ">
+        <form onSubmit={createRoom} className="lg:w-2/5 ">
         <a href="#close" className="absolute w-96 "  title="Close">
           <span className="material-icons-round text-white    hover:text-red-500">close</span>
         </a>
@@ -15,6 +48,8 @@ export const CreateRoomModal = () => {
               className="shadow appearance-none border rounded w-full py-6 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               placeholder="Topic"
+              onChange={(e)=>{
+                setTopic(e.target.value)}}
             />
           </div>
           <div className="mb-4 px-3">
@@ -22,6 +57,8 @@ export const CreateRoomModal = () => {
               className="shadow appearance-none border rounded w-full py-6 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               placeholder="Description"
+              onChange={(e)=>{
+                setAgenda(e.target.value)}}
             />
           </div>
 
@@ -32,11 +69,13 @@ export const CreateRoomModal = () => {
           </div>
           <div className="mb-4 px-3">
             <label className="inline-flex items-center">
-              <input type="radio" name="accountType" />
+              <input type="radio" name="privacyType" onChange={(e)=>{
+                setPrivacy(e.target.checked?"PRIVATE":"")}} checked={privacy === 'PRIVATE'}/>
               <span className="ml-2 text-white lg:text-2xl">Private</span>
             </label>
             <label className="inline-flex items-center ml-6">
-              <input type="radio" name="accountType" />
+              <input type="radio" name="privacyType" onChange={(e)=>{
+                setPrivacy(e.target.checked?"PUBLIC":"")}} checked={privacy === 'PUBLIC'}/>
               <span className="ml-2 text-white lg:text-2xl">Public</span>
             </label>
           </div>
