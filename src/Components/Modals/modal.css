@@ -127,7 +127,7 @@ form {
   pointer-events: auto;
 }
 
-.save-chat-modal {
+.SaveChatModal {
   width: 100%;
   position: fixed;
   top: 0;
@@ -145,7 +145,7 @@ form {
   align-items: center;
 }
 
-.save-chat-modal:target {
+.SaveChatModal:target {
   opacity: 1;
   pointer-events: auto;
 }
