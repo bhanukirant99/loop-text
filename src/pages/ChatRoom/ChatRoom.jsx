@@ -24,7 +24,7 @@ export const ChatRoom = () => {
 
   return (
     <div>
-      <ChatRoomDesktop messages={messages}/>
+      <ChatRoomDesktop messages={messages} staged={staged} audience={audience} roomId={roomId}/>
 
       <div className="lg:hidden">
         <ChatRoomNavbar />
