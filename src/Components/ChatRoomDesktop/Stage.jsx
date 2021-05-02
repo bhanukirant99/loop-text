@@ -26,7 +26,7 @@ export const Stage = ({ staged, roomId, creatorId }) => {
   };
 
   return (
-    <div className="flex flex-col items-center w-72 py-5 border h-screen">
+    <div className="fixed top-16  flex flex-col items-center  w-72 py-5 border h-screen  ">
       <p className="text-4xl pb-5">Stage</p>
       {staged.length > 0 &&
         staged.map((user) => {

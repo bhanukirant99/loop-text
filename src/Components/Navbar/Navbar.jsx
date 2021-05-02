@@ -3,7 +3,7 @@ import { Brand } from "./brand";
 import { NotificationIcon } from "..";
 export const Navbar = () => {
   return (
-    <div className="navbar shadow flex flex-row justify-between items-center px-2 ">
+    <div className="navbar fixed  w-full shadow flex flex-row justify-between items-center px-2 ">
       <Brand />
       <NotificationIcon />
     </div>

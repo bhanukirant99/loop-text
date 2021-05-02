@@ -13,46 +13,51 @@ export const CreateRoomModal = () => {
   const [privacy, setPrivacy] = useState(Boolean);
   const { user } = useAuth(firebase.auth());
   const navigate = useNavigate();
+  const [errorMsg,setErrorMsg] = useState("")
 
   const createRoom = async (e) => {
     e.preventDefault();
     const documentRef = firebase.firestore().collection("Rooms").doc();
-    await documentRef.set({
-      topic: topic,
-      agenda: agenda,
-      privacy: privacy,
-      status: "ACTIVE",
-      startedAt: firebase.firestore.Timestamp.now(),
-      memberList: [
-        {
-          uid: user.uid,
-          displayName: user.displayName,
-          photoURL: user.photoURL,
-        },
-      ],
-      creator: user.uid,
-      stage: [
-        {
-          uid: user.uid,
-          displayName: user.displayName,
-          photoURL: user.photoURL,
-        },
-      ],
-      audience: [],
-      messages: [],
-    });
 
-    navigate(`/chatroom/${documentRef.id}`);
+    if(topic && agenda && privacy){
+      await documentRef.set({
+        topic: topic,
+        agenda: agenda,
+        privacy: privacy,
+        status: "ACTIVE",
+        startedAt: firebase.firestore.Timestamp.now(),
+        memberList: [
+          {
+            uid: user.uid,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+          },
+        ],
+        creator: user.uid,
+        stage: [
+          {
+            uid: user.uid,
+            displayName: user.displayName,
+            photoURL: user.photoURL,
+          },
+        ],
+        audience: [],
+        messages: [],
+      });
+  
+      navigate(`/chatroom/${documentRef.id}`);
+    }else{
+      setErrorMsg("All fields are mandatory")
+    }
+    
   };
   return (
     <div id="create-room-modal" className="modal" autoFocus={false}>
       <div className="modal-content flex flex-col items-center w-full relative   ">
         <form onSubmit={createRoom} className="lg:w-2/5 ">
-          <a href="#close" className="absolute w-96 " title="Close">
-            <span className="material-icons-round text-white    hover:text-red-500">
-              close
-            </span>
-          </a>
+        <a href="#close" className=" sm:w-96 lg:fixed lg:right-56 lg:pt-2 "  title="Close">
+          <span className="material-icons-round text-white    hover:text-red-500">close</span>
+        </a>
           <h1 className="text-center text-3xl text-white mb-4">CREATE ROOM</h1>
           <div className="mb-4 px-3">
             <input
@@ -68,10 +73,9 @@ export const CreateRoomModal = () => {
             <input
               className="shadow appearance-none border rounded w-full py-6 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
-              placeholder="Description"
-              onChange={(e) => {
-                setAgenda(e.target.value);
-              }}
+              placeholder="Agenda"
+              onChange={(e)=>{
+                setAgenda(e.target.value)}}
             />
           </div>
 
@@ -104,11 +108,14 @@ export const CreateRoomModal = () => {
               <span className="ml-2 text-white lg:text-2xl">Public</span>
             </label>
           </div>
-
+          <p className="text-red-500 text-center">{errorMsg}</p>
           <div className="flex items-center justify-center p-2 lg:py-5">
+            
             <Button
-              primary="bg-blue-500  text-white w-4/5 h-10 text-1xl lg:text-2xl  rounded-md   "
-              text="CREATE"
+              primary="bg-blue-500  text-white w-4/5 h-10 text-1xl lg:text-2xl  rounded-md"
+              text="CREATE" 
+              
+             
             />
           </div>
         </form>
