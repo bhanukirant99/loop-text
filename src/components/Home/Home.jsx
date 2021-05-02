@@ -1,16 +1,16 @@
 import React from "react";
-import { Navbar, SearchFilter, RoomTabs, RoomCard,CreateRoom,CreateRoomModal,Notification,DialogModal,InviteModal, ChatRoom, InviteSearch } from "../";
+import { Navbar, SearchFilter, RoomTabs, RoomCard,CreateRoom,CreateRoomModal,Notification,DialogModal,InviteModal, ChatRoom, InviteSearch, ChatRoomDesktop } from "../";
 
 import "./home.css";
 export const Home = () => {
   return (
     <div>
       <Navbar />
-      <SearchFilter />
+      {/* <SearchFilter />
       <RoomTabs />
       <RoomCard />
       <CreateRoom/>
-      <CreateRoomModal/>
+      <CreateRoomModal/> */}
       {/*  
       <CreateRoomModal/>
       <Notification roomText="ReactJs" nameText="Maddy"/>

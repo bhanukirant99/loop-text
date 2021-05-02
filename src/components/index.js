@@ -16,3 +16,4 @@ export {InviteModal} from "./Modals/InviteModal"
 export {InviteCard} from "./InviteCard/InviteCard"
 export {ChatRoom} from "./ChatRoom/ChatRoom"
 export {InviteSearch} from "./InviteSearch/InviteSearch"
+export {ChatRoomDesktop} from './ChatRoomDesktop/ChatRoomDesktop'
