@@ -1,0 +1,24 @@
+.chat_room_desktop_main {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-areas: "stage chat  audience";
+}
+
+.stage {
+  grid-area: stage;
+}
+
+.chat {
+  grid-area: chat;
+}
+
+.audience {
+  grid-area: audience;
+}
+
+@media screen and (max-width: 414px) {
+  .chat_room_desktop_main {
+    display: none;
+  }
+}

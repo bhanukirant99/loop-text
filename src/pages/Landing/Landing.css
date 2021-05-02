@@ -1,0 +1,10 @@
+body {
+  /* background: url('landing_bg.svg') no-repeat center center fixed;  */
+}
+.landing {
+  height: 100vh;
+}
+
+.landing > span {
+  text-align: center;
+}

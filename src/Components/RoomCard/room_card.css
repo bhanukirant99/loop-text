@@ -1,0 +1,10 @@
+/* .room-card{
+    width:90%;
+    height: 200px;
+} */
+
+.room-badge {
+  width:30px;
+  top: 10%;
+  right: 5%;
+}
