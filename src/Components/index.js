@@ -15,3 +15,4 @@ export { InviteModal } from "./Modals/InviteModal";
 export { InviteCard } from "./InviteCard/InviteCard";
 export { InviteSearch } from "./InviteSearch/InviteSearch";
 export { ChatRoomDesktop } from "./ChatRoomDesktop/ChatRoomDesktop";
+export { ChatMobile } from "./ChatMobile/ChatMobile";
