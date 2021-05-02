@@ -1,16 +1,16 @@
 import { Card } from "./Card";
 import "./room_card.css";
-export const RoomCard = () => {
+
+import "firebase/firestore";
+export const RoomCard = ({rooms}) => {
+  
   return (
     <div className="flex flex-column flex-wrap items-center justify-center">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {
+       rooms && rooms.map(({name})=>{
+          return <Card name={name}/>
+        })
+      }
     </div>
   );
 };

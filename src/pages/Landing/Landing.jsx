@@ -41,15 +41,15 @@ export const Landing = () => {
   );
 };
 
-{
+
   /* <Navbar /> */
-}
+
 // {path && <span>Login to continue to {path}</span>}
 //       This is the landing page.
 //       {isUserLoggedIn && <span>You are logged in.</span>}
 //       <div>
 //         <button onClick={signInWithGoogle}>Sign in with Google</button>
 //       </div>
-{
+
   /* <Button primary="bg-blue-500 text-white w-2/5 h-20 text-3xl" text='Login'/> */
-}
+
