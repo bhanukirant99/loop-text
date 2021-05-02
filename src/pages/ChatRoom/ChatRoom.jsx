@@ -32,7 +32,8 @@ export const ChatRoom = () => {
 
   return (
     <div>
-      <Navbar />
+      
+
       <ChatRoomDesktop
         messages={messages}
         staged={staged}
@@ -41,12 +42,12 @@ export const ChatRoom = () => {
         creatorId={creatorId}
       />
 
-      <div className="lg:hidden">
+      {/* <div className="lg:hidden">
         <ChatRoomNavbar />
-        <h1 className="text-2xl text-center pt-5 border-b-2 ">{roomTopic}</h1>
+        <h1 className="text-2xl text-center pt-20 border-b-2 ">{roomTopic}</h1>
         <Message messages={messages} />
         <InputMessage />
-      </div>
+      </div> */}
     </div>
   );
 };

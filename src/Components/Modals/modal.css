@@ -24,6 +24,48 @@ form {
   align-items: center;
 }
 
+.stage-modal {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999999;
+  opacity: 0;
+  -webkit-transition: opacity 100ms ease-in;
+  -moz-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+  pointer-events: none;
+}
+
+.stage-modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.audience-modal {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999999;
+  opacity: 0;
+  -webkit-transition: opacity 100ms ease-in;
+  -moz-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+  pointer-events: none;
+}
+
+.audience-modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .modal_content {
   /* width: 30%;
     height: 200px;
@@ -60,4 +102,50 @@ form {
 .modal_close:hover {
   background: #ffffff;
   color: #e53935;
+}
+
+.notification-modal {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999999;
+  opacity: 0;
+  -webkit-transition: opacity 100ms ease-in;
+  -moz-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+  pointer-events: none;
+  display: grid;
+  align-items: center;
+}
+
+.notification-modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.save-chat-modal {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999999;
+  opacity: 0;
+  -webkit-transition: opacity 100ms ease-in;
+  -moz-transition: opacity 100ms ease-in;
+  transition: opacity 100ms ease-in;
+  pointer-events: none;
+  display: grid;
+  align-items: center;
+}
+
+.save-chat-modal:target {
+  opacity: 1;
+  pointer-events: auto;
 }

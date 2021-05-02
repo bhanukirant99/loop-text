@@ -36,7 +36,7 @@ export const Audience = ({ audience, roomId, creatorId }) => {
               user={user}
               userName={user.displayName}
               callback={moveToStage}
-              buttonText="Add to stage"
+              buttonText="+ Stage"
               isUserMod={isUserMod()}
               renderedIn="AUDIENCE"              
             />
