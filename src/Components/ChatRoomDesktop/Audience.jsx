@@ -1,13 +1,49 @@
 import { UserCard } from "./UserCard";
+import firebase from "firebase/app";
+import "firebase/firestore";
+import { useAuth } from "../../hooks";
 
-export const Audience = ({ iconName, text }) => {
+export const Audience = ({ audience, roomId, creatorId }) => {
+  const { user } = useAuth(firebase.auth());
+
+  const isUserMod = () => user.uid === creatorId;
+
+  const moveToStage = (user) => {
+    firebase
+      .firestore()
+      .collection("Rooms")
+      .doc(roomId)
+      .update({
+        audience: firebase.firestore.FieldValue.arrayRemove({ ...user }),
+      });
+    firebase
+      .firestore()
+      .collection("Rooms")
+      .doc(roomId)
+      .update({
+        stage: firebase.firestore.FieldValue.arrayUnion(user),
+      });
+  };
+
   return (
     <div className="flex flex-col items-center  w-72 py-5 border h-screen">
-      <span className="text-2xl">{iconName}</span>
-      <p className="text-4xl pb-5">{text}</p>
-      <UserCard userName="Maddy" />
-      <UserCard userName="Maddy" />
-      <UserCard userName="Maddy" />
+      <p className="text-4xl pb-5">Audience</p>
+
+      {audience &&
+        audience.map((user) => {
+          return (
+            <UserCard
+              key={user.uid}
+              uid={user.uid}
+              user={user}
+              userName={user.displayName}
+              callback={moveToStage}
+              buttonText="Add to stage"
+              isUserMod={isUserMod()}
+              renderedIn="AUDIENCE"              
+            />
+          );
+        })}
     </div>
   );
 };

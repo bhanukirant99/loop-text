@@ -29,6 +29,7 @@ export const Chat = ({messages,roomId}) => {
       <div className="chatBubble-main w-full  bg-gray-50 ">
         {
           messages.map((msgItem)=><ChatBubble
+          key={msgItem.msgId}
           userName="Maddy"
           timeStamp="Today at 07:19"
           photoURL={msgItem.photoURL}
