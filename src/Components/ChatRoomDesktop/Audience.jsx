@@ -25,8 +25,8 @@ export const Audience = ({ audience, roomId, creatorId }) => {
       });
   };
   return (
-    <div className="flex flex-col items-end justify-start  w-full pr-16 top-16  border h-screen fixed">
-     <p className="text-4xl pb-5">Audience</p>
+    <div className="flex flex-col justify-start border py-5">
+     <p className="text-4xl pb-5 text-center">Audience</p>
      {audience &&
         audience.map((user) => {
           return (

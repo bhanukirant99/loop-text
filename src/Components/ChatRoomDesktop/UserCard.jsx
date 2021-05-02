@@ -21,10 +21,9 @@ export const UserCard = ({
   };
 
   return (
-    <div className="user-card flex flex-row justify-evenly items-center ">
-      <span className="material-icons text-4xl p-2">account_circle</span>
-      <p className="text-3xl text-black">{userName}</p>
-
+    <div className="user-card flex flex-row justify-evenly items-center mb-5">
+      <img src={user.photoURL} alt={user.displayName} className="rounded-full h-12 w-12 mr-2"/>
+      <div className="text-lg text-black">{userName}</div>
       {showButton() && (
         <button onClick={() => callback(user)}>{buttonText}</button>
       )}

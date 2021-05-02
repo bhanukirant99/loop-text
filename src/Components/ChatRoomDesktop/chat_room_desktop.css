@@ -1,9 +1,6 @@
-.chat{
-  /* padding: 10px; */
+.chat {
   height: 90vh;
   margin: 10vh 0 10vh;
-  /* overflow-y: scroll; */
-  /* overflow-x:hidden; */
   display: flex;
   flex-direction: column;
 }
@@ -19,18 +16,6 @@ chat::-webkit-scrollbar-thumb {
   background: #6649b8;
 }
 
-.chat_room_desktop_main {
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 5fr 1fr;
-  grid-template-areas: "stage chat  audience";
-}
-.chat-form{
-  width:70%;
-  bottom:0.05%;
-  
-}
-
 .stage {
   grid-area: stage;
 }
@@ -38,6 +23,18 @@ chat::-webkit-scrollbar-thumb {
 .chat {
   grid-area: chat;
 }
+
+.chat_room_desktop_main {
+  /* width: 100%; */
+  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 1.5fr 5fr 1.5fr;
+  grid-template-areas: "stage chat audience";
+}
+
+
+
+
 
 .audience {
   grid-area: audience;
