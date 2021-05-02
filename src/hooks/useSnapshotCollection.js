@@ -1,5 +1,4 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
+// import "firebase/firestore";
 import { useState, useEffect } from "react";
 import { useMounted } from "./useMounted";
 export const useSnapshotCollection = (query) => {
