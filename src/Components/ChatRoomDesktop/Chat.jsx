@@ -27,44 +27,37 @@ export const Chat = ({ messages, roomId }) => {
       });
   };
   return (
-    <div className="chat  flex flex-col justify-end  h-4/5 ">
-      <div className="chatBubble-main w-full  bg-gray-50 ml-8   ">
+    <div className="chat flex flex-col">
+      <div className="bg-gray-50 ml-8 z-10 w-full">
         {messages.map((msgItem) => (
-          <div>
+          <div key={msgItem.msgId}>
             <ChatBubble
-              key={msgItem.msgId}
               userName="Maddy"
               timeStamp="Today at 07:19"
               photoURL={msgItem.photoURL}
-              // message={msgItem.text}
             />
             <p className="flex flex-row justify-center items-center w-2/5">
               {msgItem.text}
             </p>
           </div>
         ))}
-        {/* <ChatBubble
-          userName="Maddy"
-          timeStamp="Today at 07:19"
-          message="Hello World "
-        /> */}
       </div>
 
-      <div className="input-message  relative  ">
+      <div className="">
         <form
           onSubmit={sendMessage}
-          className="chat-form  flex flex-row fixed right-72  "
+          className="flex flex-row"
         >
           <input
             type="text"
-            className=" p-3 w-3/4 flex-grow outline-none"
+            className="p-3 w-3/4 flex-grow outline-none"
             value={text}
             onChange={(e) => {
               setText(e.target.value);
             }}
           />
           <button type="submit">
-            <span className="material-icons-round ">send</span>
+            <span className="material-icons-round">send</span>
           </button>
         </form>
       </div>
