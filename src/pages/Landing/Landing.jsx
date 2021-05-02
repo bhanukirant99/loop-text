@@ -19,9 +19,9 @@ export const Landing = () => {
   return (
     <div className="landing  flex flex-col items-center justify-evenly lg:justify-center ">
       {/* <h1 className="text-5xl lg:text-8xl">LoopText</h1> */}
-      <img src='/images/loop-logo.png' alt='logo'/>
+      <img src='/images/logo2.png' alt='logo'/>
       <span className="text-3xl mt-10">
-        Never Miss any live conversations again!
+        {/* Never Miss any live conversations again! */}
       </span>
 
       {isUserLoggedIn ? (

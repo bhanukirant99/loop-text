@@ -12,9 +12,9 @@ export const Button = ({
 
 }) => {
   return (
-    <button id={btnId} className={primary} onClick={onClickFunction}>
+    <button id={btnId} className={primary} onClick={onClickFunction} disabled={isDisable}>
       
-      <a href={hrefText?hrefText:"#!"}>{text}</a>
+      {/* <a href={hrefText?hrefText:"null"}>{text}</a> */}{text}
     </button>
   );
 };

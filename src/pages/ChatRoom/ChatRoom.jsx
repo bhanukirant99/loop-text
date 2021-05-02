@@ -1,6 +1,7 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { ChatRoomNavbar } from "./ChatRoomNavbar";
+import {Navbar} from '../../Components'
 import { InputMessage } from "./InputMessage";
 import { Message } from "./Message";
 import { ChatRoomDesktop } from "../../Components";

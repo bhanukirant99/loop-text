@@ -24,12 +24,10 @@ export const Audience = ({ audience, roomId, creatorId }) => {
         stage: firebase.firestore.FieldValue.arrayUnion(user),
       });
   };
-
   return (
-    <div className="flex flex-col items-center  w-72 py-5 border h-screen">
-      <p className="text-4xl pb-5">Audience</p>
-
-      {audience &&
+    <div className="flex flex-col items-end justify-start  w-full pr-16 top-16  border h-screen fixed">
+     <p className="text-4xl pb-5">Audience</p>
+     {audience &&
         audience.map((user) => {
           return (
             <UserCard
