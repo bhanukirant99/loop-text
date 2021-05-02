@@ -2,12 +2,13 @@ import "./modal.css";
 import { Button } from "..";
 export const CreateRoomModal = () => {
   return (
-    <div className="modal" autoFocus={false}>
-      <div className="modal-content flex flex-col items-center w-full    ">
-        <a href="#close" title="Close">
-          <span className="material-icons-round">close</span>
-        </a>
+    <div id='create-room-modal' className="modal" autoFocus={false}>
+      <div className="modal-content flex flex-col items-center w-full relative   ">
+       
         <form action="" className="lg:w-2/5 ">
+        <a href="#close" className="absolute w-96 "  title="Close">
+          <span className="material-icons-round text-white    hover:text-red-500">close</span>
+        </a>
           <h1 className="text-center text-3xl text-white mb-4">CREATE ROOM</h1>
           <div className="mb-4 px-3">
             <input

@@ -15,7 +15,7 @@ export const Hallway = () => {
       <RoomTabs />
       <RoomCard />
       <CreateRoom />
-      {/* <CreateRoomModal/> */}
+      <CreateRoomModal/>
     </div>
   );
 };
