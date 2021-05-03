@@ -17,6 +17,7 @@ export const UserCard = ({
       return isUserMod;
     }
     if (renderedIn === "AUDIENCE") {
+   
       return isUserMod;
     }
   };

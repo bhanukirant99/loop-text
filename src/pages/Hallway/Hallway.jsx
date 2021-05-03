@@ -99,6 +99,7 @@ export const Hallway = () => {
   return (
     <div>
       <Navbar />
+     
       <SearchFilter
         searchText={searchText}
         setSearchText={setSearchText}

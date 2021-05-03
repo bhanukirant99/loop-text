@@ -2,7 +2,8 @@ import { UserCard } from "./UserCard";
 import firebase from "firebase/app";
 import "firebase/firestore";
 import { useAuth } from "../../hooks";
-
+import {DialogModal} from "../Modals/DialogModal";
+import {SaveRoomModal} from "../Modals/SaveRoomModal";
 export const Stage = ({ staged, roomId, creatorId }) => {
   const { user } = useAuth(firebase.auth());
 
@@ -27,6 +28,9 @@ export const Stage = ({ staged, roomId, creatorId }) => {
 
   return (
     <div className="stage flex flex-col items-center pt-5 border">
+        <a href={creatorId===user.uid?"#SaveRoomModal":"#modal"} >
+        <span className="material-icons text-2xl text-red-700">arrow_back</span>
+      </a>
       <p className="text-4xl pb-5">Stage</p>
       {staged.length > 0 &&
         staged.map((user) => {
@@ -44,6 +48,8 @@ export const Stage = ({ staged, roomId, creatorId }) => {
             />
           );
         })}
+        {creatorId===user.uid?<SaveRoomModal roomId={roomId}/>:<DialogModal roomId={roomId}/>}
+    {/* <DialogModal roomId={roomId} creatorId={creatorId}/> */}
     </div>
   );
 };

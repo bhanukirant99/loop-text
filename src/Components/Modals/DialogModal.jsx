@@ -1,7 +1,33 @@
 import { Button } from "..";
 import "./modal.css";
 import {SaveChatModal} from '../Modals/SaveChatModal'
-export const DialogModal = ({ msg }) => {
+import firebase from "firebase/app";
+import {useAuth} from "../../hooks";
+import {useNavigate} from "react-router-dom"; 
+import "firebase/firestore";
+import "firebase/auth";
+export const DialogModal = ({ msg ,roomId ,creatorId}) => {
+  const {user}=useAuth(firebase.auth());
+  const navigate=useNavigate();
+  const leaveRoom = async () => {
+      await firebase
+      .firestore()
+      .collection("Rooms")
+      .doc(roomId)
+      .update({
+        audience: firebase.firestore.FieldValue.arrayRemove({
+          displayName: user.displayName,
+          uid: user.uid,
+          photoURL: user.photoURL,
+        }),
+        stage: firebase.firestore.FieldValue.arrayRemove({
+          displayName: user.displayName,
+          uid: user.uid,
+          photoURL: user.photoURL,
+        }),
+      });
+    navigate("/hallway");
+  };
   return (
     <>
     <div id="modal" className="modal flex flex-col justify-center">
@@ -11,6 +37,8 @@ export const DialogModal = ({ msg }) => {
           <a href="#SaveChatModal" className=' w-3/5 '>
             <Button
               primary="bg-green-500 text-white w-2/5 h-10 text-1xl "
+              onClickFunction={leaveRoom}
+              primary="bg-green-500 text-white w-2/5 h-10 text-1xl mx-3"
               text="Yes"
             />
           </a>
