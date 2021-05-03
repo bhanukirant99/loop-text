@@ -21,6 +21,7 @@ export const DialogModal = ({ msg ,roomId ,creatorId}) => {
           photoURL: user.photoURL,
         }),
         stage: firebase.firestore.FieldValue.arrayRemove({
+    
           displayName: user.displayName,
           uid: user.uid,
           photoURL: user.photoURL,
@@ -38,7 +39,6 @@ export const DialogModal = ({ msg ,roomId ,creatorId}) => {
             <Button
               primary="bg-green-500 text-white w-2/5 h-10 text-1xl "
               onClickFunction={leaveRoom}
-              primary="bg-green-500 text-white w-2/5 h-10 text-1xl mx-3"
               text="Yes"
             />
           </a>
