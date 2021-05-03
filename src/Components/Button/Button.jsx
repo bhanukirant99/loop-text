@@ -7,10 +7,14 @@ export const Button = ({
   text,
   isDisable,
   onClickFunction,
+  btnId,
+  hrefText
+
 }) => {
   return (
-    <button className={primary} onClick={onClickFunction}>
-      {text}
+    <button id={btnId} className={primary} onClick={onClickFunction} disabled={isDisable}>
+      
+      {/* <a href={hrefText?hrefText:"null"}>{text}</a> */}{text}
     </button>
   );
 };
