@@ -1,16 +1,20 @@
 import "./App.css";
-import { Landing, Hallway,ChatRoom} from "./pages";
-import { Routes, Route } from "react-router-dom";
+import { Landing, Hallway, ChatRoom } from "./pages";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { PrivateRoute } from "./Components";
 import { useEffect } from "react";
+import { useAuth } from "./hooks";
+import firebase from "firebase/app";
+import "firebase/auth";
 
 const App = () => {
+  const navigate = useNavigate();
+  const { user } = useAuth(firebase.auth());
 
-  useEffect(
-    ()=>{
-      
-    }
-  )
+  useEffect(() => {
+    user && navigate("/hallway");
+  }, [user]);
+
   return (
     <div className="App">
       <Routes>

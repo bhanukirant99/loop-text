@@ -5,7 +5,7 @@ import "firebase/auth";
 
 export const PrivateRoute = (props) => {
   const { isUserLoggedIn, loading } = useAuth(firebase.auth());
-
+  
   return (
     <div>
       {loading ? (
